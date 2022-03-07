@@ -1,6 +1,6 @@
 #Github.com/Vasusen-code
 
-import time, os
+import time, os, math, asyncio
 
 from .. import bot as Drone
 from .. import userbot, Bot
@@ -9,11 +9,13 @@ from main.plugins.pyroplug import get_msg
 
 from telethon import events
 from telethon.tl.types import DocumentAttributeVideo
+from telethon.errors.rpcerrorlist import UserNotParticipantError
+from telethon.tl.functions.channels import GetParticipantRequest
 
 from ethon.pyfunc import video_metadata
-from ethon.telefunc import fast_upload, fast_download, force_sub
+from ethon.telefunc import fast_upload, fast_download
 
-from main.plugins.helpers import get_link, join, screenshot
+from main.plugins.helpers import get_link, join, screenshot, force_sub
 
 ft = f"To use this bot you've to join @{fs}."
 
