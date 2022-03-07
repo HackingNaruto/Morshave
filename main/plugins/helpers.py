@@ -3,10 +3,28 @@
 from pyrogram.errors import FloodWait, InviteHashInvalid, InviteHashExpired, UserAlreadyParticipant
 from telethon import errors, events
 
-import asyncio, subprocess, re, os, time
+import asyncio, subprocess, re, os, time, math
 from pathlib import Path
 from datetime import datetime as dt
+from telethon.errors.rpcerrorlist import UserNotParticipantError
+from telethon.tl.functions.channels import GetParticipantRequest
 
+#ForceSub-------------------------------------------------------------------------------------------------------
+
+async def force_sub(client, channel, id, ft):
+    s, r = False, None
+    try:
+        x = await client(GetParticipantRequest(channel=channel, participant=int(id)))
+        left = x.stringify()
+        if 'left' in left:
+            s, r = True, f"{ft}"
+        else:
+            s, r = False, None
+    except UserNotParticipantError:
+        s, r = True, f"To use this bot you've to join @{channel}" 
+    except Exception:
+        s, r = True, "ERROR: Add in ForceSub channel, or check your channel id."
+    return s, r
 #Join private chat-------------------------------------------------------------------------------------------------------------
 
 async def join(client, invite_link):
