@@ -46,5 +46,5 @@ async def remt(event):
 async def start(event):
     Drone = event.client
     text = "Silahkan kirim link tautan disini dan tunggu beberapa saat."
-    await event.edit(text)
+    await event.send_message(text)
     
