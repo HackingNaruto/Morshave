@@ -45,6 +45,6 @@ async def remt(event):
 @Drone.on(events.NewMessage(incoming=True, pattern=f"{S}"))
 async def start(event):
     Drone = event.client
-    text = "Silahkan kirim link tautan disini dan tunggu beberapa saat."
+    text = "Silahkan kirim copy private link disini dan tunggu beberapa saat.\n\n**Ex:**https://t.me/infodownloadsch/22"
     await event.reply(text)
     
