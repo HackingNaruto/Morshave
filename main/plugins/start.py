@@ -45,6 +45,6 @@ async def remt(event):
 @Drone.on(events.NewMessage(incoming=True, pattern=f"{S}"))
 async def start(event):
     Drone = event.client
-    text = "Send me Link of any message to clone it here, For private channel message, send invite link first."
-    await client.send_message(event, text, buttons=[Button.inline('Edited by', url='https://t.me/salsyns')])
+    text = "Silahkan kirim link tautan disini dan tunggu beberapa saat."
+    await event.edit(text)
     
