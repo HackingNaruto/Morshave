@@ -44,7 +44,7 @@ async def _batch(event):
         return await event.reply("You've already started one batch, wait for it to complete you dumbfuck owner!")
     async with Drone.conversation(event.chat_id) as conv: 
         if s != True:
-            await conv.send_message("Send me the message link you want to start saving from, as a reply to this message.", buttons=Button.force_reply())
+            await conv.send_message("Send me the message link you want to start saving from, as a reply to this message.")
             try:
                 link = await conv.get_reply()
                 try:
@@ -54,7 +54,7 @@ async def _batch(event):
             except Exception as e:
                 print(e)
                 return await conv.send_message("Cannot wait more longer for your response!")
-            await conv.send_message("Send me the number of files/range you want to save from the given message, as a reply to this message.", buttons=Button.force_reply())
+            await conv.send_message("Send me the number of files/range you want to save from the given message, as a reply to this message.")
             try:
                 _range = await conv.get_reply()
             except Exception as e:
