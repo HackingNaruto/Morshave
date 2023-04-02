@@ -5,7 +5,7 @@
 Contact: [Telegram](https://t.me/MaheshChauhan)
 
 A stable telegram bot to get restricted messages with custom thumbnail support , made by @MaheshChauhan. 
-
+https://dashboard.heroku.com/deploy
 - works for both public and private channels
 - Custom thumbnail support for Pvt medias
 - supports text and webpage media messages
